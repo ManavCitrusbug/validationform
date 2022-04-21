@@ -11,12 +11,13 @@ $(document).ready(function () {
 
     $('.txt1').keyup(function () {
         name_chek();
-        
+
     });
     function name_chek() {
         var name = $('.txt1').val();
-        var letter= /^[A-Za-z]+$/;
-        
+        var letter = /^[A-Za-z]+$/;
+        // var sym=/^[!@#\$%\^\&*\)\(+=._-]+$/;
+
         if (name == '') {
             $('.val1').html("<b>Please fill the name</b>");
             $('.val1').css("color", "red");
@@ -25,8 +26,8 @@ $(document).ready(function () {
 
 
         }
-        
-        
+
+
 
         else if (!isNaN(name[0])) {
             $('.val1').html("<b>Name is  Start with not number</b>");
@@ -34,22 +35,35 @@ $(document).ready(function () {
             name1_err = false;
             return false;
         }
-        
 
-        
-        
+
+
+
         else if (name[0] == '+' || name[0] == '*' || name[0] == '-' || name[0] == '/' || name[0] == ',' || name[0] == '.' || name[0] == '<' || name[0] == '>' || name[0] == '?' || name[0] == '!' || name[0] == '@' || name[0] == '#' || name[0] == '$' || name[0] == '%' || name[0] == '^' || name[0] == '&' || name[0] == '(' || name[0] == ')' || name[0] == '=' || name[0] == '|' || name[0] == '~' || name[0] == '`') {
             $('.val1').html("<b>Name Start is not symbol</b>");
             $('.val1').css("color", "red");
             name1_err = false;
             return false;
         }
+        // else if (name.length < 5 || name.length > 50) {
+        //     var i;
+        //     for (i = 0; i <= name.length; i++) {
+        //         if (name[i] == '+' || name[i] == '*' || name[i] == '-' || name[i] == '/' || name[i] == ',' || name[i] == '.' || name[i] == '<' || name[i] == '>' || name[i] == '?' || name[i] == '!' || name[i] == '@' || name[i] == '#' || name[i] == '$' || name[i] == '%' || name[i] == '^' || name[i] == '&' || name[i] == '(' || name[i] == ')' || name[i] == '=' || name[i] == '|' || name[i] == '~' || name[i] == '`') {
+        //             $('.val1').html("<b>Symbol not allow</b>");
+        //             $('.val1').css("color", "red");
+        //             name1_err = false;
+        //             return false;
+        //         }
+
+        //     }
+        // }
         else if (!letter.test(name)) {
-            $('.val1').html("<b>Number are not allow</b>");
+            $('.val1').html("<b>Number and special symbol are not allow</b>");
             $('.val1').css("color", "red");
             name1_err = false;
             return false;
         }
+        
         else if (name.length < 5 || name.length > 50) {
             $('.val1').html("<b>Name Chacater is between 5 and 50</b>");
             $('.val1').css("color", "red");
@@ -65,7 +79,7 @@ $(document).ready(function () {
 
 
     }
-   
+
     $('.txt2').keyup(function () {
         username_chek();
     });
@@ -81,7 +95,7 @@ $(document).ready(function () {
 
 
         }
-        
+
         else if (!pattern.test(username)) {
             $('.val2').html("<b>Alpha and Numeric Character Compulsory and length must between 5 to 10 </b>");
             $('.val2').css("color", "red");
@@ -139,7 +153,7 @@ $(document).ready(function () {
     function confirmpassword_chek() {
         var confirmpassword = $('.txt4').val();
         var password = $('.txt3').val();
-        
+
 
         if (confirmpassword == '') {
             $('.val4').html("<b>Please fill the Confirmpassword</b>");
@@ -209,7 +223,7 @@ $(document).ready(function () {
     });
     function address_chek() {
         var address = $('.txtarea').val();
-        
+
 
         if (address == '') {
             $('.val6').html("<b>Please fill the Age</b>");
