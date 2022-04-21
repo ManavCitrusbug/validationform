@@ -92,7 +92,7 @@ $(document).ready(function () {
     });
     function password_chek() {
         var password = $('.txt3').val();
-        var pattern = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,16}$/;
+        var pattern = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{5,8}$/;
 
         if (password == '') {
             $('.val3').html("<b>Please fill the password</b>");
