@@ -102,7 +102,7 @@ $(document).ready(function () {
 
 
         }
-        else if (password.length < 5 || password.length > 10) {
+        else if (password.length < 5 || password.length > 8) {
             $('.val3').html("<b>password Chacater is between 5 and 8</b>");
             $('.val3').css("color", "red");
             password_err = false;
