@@ -11,12 +11,12 @@ $(document).ready(function () {
 
     $('.txt1').keyup(function () {
         name_chek();
-        // chek_str1();
+        
     });
     function name_chek() {
         var name = $('.txt1').val();
-        // var num = name[0]
-        // console.log(name[0]);
+        var letter= /^[A-Za-z]+$/;
+        
         if (name == '') {
             $('.val1').html("<b>Please fill the name</b>");
             $('.val1').css("color", "red");
@@ -35,9 +35,17 @@ $(document).ready(function () {
             return false;
         }
         
+
+        
         
         else if (name[0] == '+' || name[0] == '*' || name[0] == '-' || name[0] == '/' || name[0] == ',' || name[0] == '.' || name[0] == '<' || name[0] == '>' || name[0] == '?' || name[0] == '!' || name[0] == '@' || name[0] == '#' || name[0] == '$' || name[0] == '%' || name[0] == '^' || name[0] == '&' || name[0] == '(' || name[0] == ')' || name[0] == '=' || name[0] == '|' || name[0] == '~' || name[0] == '`') {
             $('.val1').html("<b>Name Start is not symbol</b>");
+            $('.val1').css("color", "red");
+            name1_err = false;
+            return false;
+        }
+        else if (!letter.test(name)) {
+            $('.val1').html("<b>Number are not allow</b>");
             $('.val1').css("color", "red");
             name1_err = false;
             return false;
@@ -57,40 +65,7 @@ $(document).ready(function () {
 
 
     }
-    // function chek_str1(){
-    //     var name = $('.txt1').val();
-    //     console.log(name);
-    //     if (name.length < 5 || name.length > 50) {
-    //         var i;
-            
-    //         if(isNaN(name)){
-    //             console.log("########");
-    //         }
-    //         else{
-    //             console.log("number aave che");
-    //         }
-    //         // // for(i=0;i<=name.length;i++){
-    //         //     if(isNaN(name[i])){
-    //         //         $('.val1').html("<b>Number is not allow</b>");
-    //         //         $('.val1').css("color", "red");
-    //         //         name1_err = false;
-    //         //         return false;
-    //         //     }
-    //         //     else{
-    //         //         $('.val1').html("<b>&nbsp;&nbsp;&#10004;</b>");
-    //         //         $('.val1').css("color", "green");
-    //         //         name1_err = true;
-    //         //         return true;
-    //         //     }
-    //         // }
-    //     }
-    //     else {
-    //         $('.val1').html("<b>&nbsp;&nbsp;&#10004;</b>");
-    //         $('.val1').css("color", "green");
-    //         name1_err = true;
-    //         return true;
-    //     }
-    // }
+   
     $('.txt2').keyup(function () {
         username_chek();
     });
@@ -106,12 +81,7 @@ $(document).ready(function () {
 
 
         }
-        // else if (username.length < 5 || username.length > 10) {
-        //     $('.val2').html("<b>username Chacater is between 5 and 10</b>");
-        //     $('.val2').css("color", "red");
-        //     username_err = false;
-        //     return false;
-        // }
+        
         else if (!pattern.test(username)) {
             $('.val2').html("<b>Alpha and Numeric Character Compulsory and length must between 5 to 10 </b>");
             $('.val2').css("color", "red");
@@ -169,7 +139,7 @@ $(document).ready(function () {
     function confirmpassword_chek() {
         var confirmpassword = $('.txt4').val();
         var password = $('.txt3').val();
-        // var pattern= /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,16}$/ ;
+        
 
         if (confirmpassword == '') {
             $('.val4').html("<b>Please fill the Confirmpassword</b>");
@@ -239,8 +209,7 @@ $(document).ready(function () {
     });
     function address_chek() {
         var address = $('.txtarea').val();
-        // var age2=parseInt(age1);
-        // var pattern= /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,16}$/ ;
+        
 
         if (address == '') {
             $('.val6').html("<b>Please fill the Age</b>");
