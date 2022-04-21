@@ -25,7 +25,7 @@ $(document).ready(function () {
 
         }
         else if (!isNaN(name[0])) {
-            $('.val1').html("<b>Name Start is not number</b>");
+            $('.val1').html("<b>Name is  Start with not number</b>");
             $('.val1').css("color", "red");
             name1_err = false;
             return false;
@@ -56,7 +56,7 @@ $(document).ready(function () {
     });
     function username_chek() {
         var username = $('.txt2').val();
-        var pattern = /^(?=.*[0-9])(?=.*[_@])[a-zA-Z0-9_@]{8,16}$/;
+        var pattern = /^(?=.*[0-9])(?=.*[_@])[a-zA-Z0-9_@]{5,10}$/;
 
         if (username == '') {
             $('.val2').html("<b>Please fill the Username</b>");
@@ -66,14 +66,14 @@ $(document).ready(function () {
 
 
         }
-        else if (username.length < 5 || username.length > 10) {
-            $('.val2').html("<b>username Chacater is between 5 and 10</b>");
-            $('.val2').css("color", "red");
-            username_err = false;
-            return false;
-        }
+        // else if (username.length < 5 || username.length > 10) {
+        //     $('.val2').html("<b>username Chacater is between 5 and 10</b>");
+        //     $('.val2').css("color", "red");
+        //     username_err = false;
+        //     return false;
+        // }
         else if (!pattern.test(username)) {
-            $('.val2').html("<b>Alpha and Numeric Character Compulsory </b>");
+            $('.val2').html("<b>Alpha and Numeric Character Compulsory and length must between 5 to 10 </b>");
             $('.val2').css("color", "red");
             username_err = false;
             return false;
